@@ -1,0 +1,21 @@
+<div class="container">
+<h2>Posts</h2>
+<div class="float-right mb-1"><button routerLink="add" type="button" class="btn btn-primary">Add Post</button></div>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let post of posts;">
+    <td>{{post.id}}</td>
+    <td>{{post.title}}</td>
+    <td>{{post.body}}</td>
+    <td><a routerLink="edit/{{post.id}}" class="cursor">Edit</a></td>
+    <td><a (click)="delete(post.id)" class="cursor">Delete</a></td>
+  </tr>
+</table>
+
+</div>
